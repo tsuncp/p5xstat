@@ -47,8 +47,6 @@ var specialArray = [{ "id": 1231, "name": "美波" }, { "id": 1011, "name": "龍
 async function main() {
   console.log("普通");
   const normal = await fetchData(1);
-  //save normal as csv
-  fs.writeFileSync('normal.csv', normal.map(item => `${convertTimestamp(item.t)},${item.aas}`).join('\n'));
   normal.reverse();
   displayData(listSpecialData(normal))
   console.log("");
